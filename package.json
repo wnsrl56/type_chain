@@ -7,7 +7,32 @@
   "author": "wnsrl56@gmail.com",
   "license": "MIT",
   "scripts": {
-    "start": "node index.js",
-    "prestart": "tsc"
+    "start": "tsc-watch --onSuccess \"node dist/index.js\"",
+    "test": "jest --watchAll"
+  },
+  "devDependencies": {
+    "tsc-watch": "^1.1.39"
+  },
+  "dependencies": {
+    "@types/jest": "^24.0.6",
+    "crypto-js": "^3.1.9-1",
+    "jest": "^24.1.0",
+    "ts-jest": "^24.0.0",
+    "typescript": "^3.3.3"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.ts$": "ts-jest"
+    },
+    "testRegex": "\\.test\\.ts$",
+    "moduleFileExtensions": [
+      "ts",
+      "js"
+    ],
+    "globals": {
+      "ts-jest": {
+        "enableTsDiagnostics": true
+      }
+    }
   }
 }
